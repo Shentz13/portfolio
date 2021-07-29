@@ -17,7 +17,9 @@ function Scene() {
             </video>
             <div id="frame">
 
-                <Menu></Menu>
+                
+                
+
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 function Text(props) {
-    if (props.type == "p") {
+    if (props.type === "p") {
         return (
             <p>{props.text}</p>
         )
