@@ -17,26 +17,47 @@ class Loader extends React.Component {
       }
 
  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
+  
+  this.setState({isToggleOn: true});
+ 
+    console.log(this.state.isToggleOn);
+
     
   }
 
     render () {
+      const isToggleOn = this.state.isToggleOn;
+      let step;
+
+      if(isToggleOn) {
+        step = <div className="loader-circle-active">
+          <div className="greyPrint-cont">
+            <img src={BluePrint} width="100px"/>
+            </div>
+          <div className="bluePrint-cont">
+            <img src={BluePrint} width="100px"/>
+            </div>
+          
+          <div id="laser"></div>
+      </div>
+      } else {
+        step = <div className="loader-circle-inactive">
+          {/*<p className="symbol" onClick={this.handleClick}>PRESS TO UNLOCK DOOR</p>*/}
+          <FontAwesomeIcon icon={faPowerOff} onClick={this.handleClick} size="4x"/>
+          
+          </div>
+      }
         return (
         <div className="loader-container">
-            <div className="element">
-                <p className="symbol" onClick={this.handleClick}>PRESS TO UNLOCK DOOR</p>
-                <img src={BluePrint} width="100px"/>
-            </div>
-            <div id="loader-top" className="loader">
-                
+                      <div id="loader-top" className="loader">                
             </div>
         
-            <div id="loader-bottom" className="loader">
-                
+            <div id="loader-bottom" className="loader">                
             </div>
+            <div className="element">
+                {step}
+            </div>
+
         </div>)
     }
 }

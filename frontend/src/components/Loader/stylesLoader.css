@@ -9,6 +9,12 @@
   z-index: 20;
   display: flex;
   flex-direction: column;
+  background-color: #222;
+  /*
+  background-image: URL("../../assets/img/hexa-bg-left.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;*/
 }
 
 .loader {
@@ -18,13 +24,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;
+  background-color: #222;
+  box-shadow: inset 0 0 5px #444;
 }
 
 #loader-top {
+  /*
   overflow: visible;
   border-right: 1px solid black;
   background-image: URL("../../assets/img/bg-transp-top-small.png");
-  background-position: bottom;
+  background-position: bottom;*/
+  border-bottom: 1px solid black;
 }
 
 #loader-top div {
@@ -64,48 +74,46 @@
     0px 1px 8px rgb(0 0 0) inset, 0px -1px 8px rgb(0 0 0) inset;
 }
 
-#circle-int .fa-power-off {
-  text-shadow: 0 0 11px rgba(0 255 255 / 100%), 0 0 11px black inset;
-  color: rgba(255, 255, 255, 0);
+.fa-power-off {
+  filter: drop-shadow(0 0 1px rgba(209, 198, 198, 0.5));
+  color: black;
   -webkit-animation: pulse 2s linear infinite;
   -moz-animation: pulse 2s linear infinite;
   animation: pulse 2s linear infinite;
+  z-index: 30;
 }
 
 @-moz-keyframes pulse {
   0% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
   50% {
-    color: rgba(255, 255, 255, 0.1);
-    text-shadow: none;
+    color: rgb(0, 223, 223);
   }
   100% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
 }
 @-webkit-keyframes pulse {
   0% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
   50% {
-    color: rgba(255, 255, 255, 0.1);
-    text-shadow: none;
+    color: rgb(0, 223, 223);
   }
   100% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
 }
 @keyframes pulse {
   0% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
   50% {
-    color: rgba(255, 255, 255, 0.1);
-    text-shadow: none;
+    color: rgb(0, 223, 223);
   }
   100% {
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
   }
 }
 
@@ -144,28 +152,30 @@
 }*/
 
 #loader-bottom {
+  /*
   background-image: URL("../../assets/img/bg-transp-bottom-small.png");
-  background-position: top;
+  background-position: top;*/
+  border-top: 1px solid black;
 }
 
 .element {
-  box-shadow: 0px 0px 12px rgb(0 255 255 / 50%);
-  border: 1px solid rgba(127, 255, 255, 0.25);
+  /*
   font-family: Helvetica, sans-serif;
   text-align: center;
   line-height: normal;
   cursor: default;
-  background-color: rgba(0, 127, 127, 0.74);
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: auto;
+  pointer-events: auto;*/
   /*transform: translate(-50%, -50%) matrix3d(-0.927312, 0, 0.374289, 0, 0, -1, 0, 0, -0.374289, 0, -0.927312, 0, -336.86, -142, -834.581, 1);*/
-  width: 60vw;
-  height: 40vh;
+
+  width: 400px;
+  height: 400px;
   position: absolute;
-  left: calc(20vw);
-  top: calc(30vh);
+  left: calc(50vw - 200px);
+  top: calc(50vh - 200px);
+  border-radius: 50%;
   /*transform: skewX(45deg);*/
 }
 
@@ -173,4 +183,191 @@
   -webkit-animation: pulse 2s linear infinite;
   -moz-animation: pulse 2s linear infinite;
   animation: pulse 2s linear infinite;
+}
+/*
+.loader-circle-active {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 75px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.loader-circle-active {
+  border: 7px double #ff5722;
+  -webkit-animation: ball-turn 1s linear infinite;
+  animation: ball-turn 1s linear infinite;
+}
+
+.loader-circle-active:before,
+.loader-circle-active:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff5722;
+  border-radius: 50%;
+  bottom: 0;
+  right: 37px;
+}
+
+.loader-circle-active:after {
+  left: 37px;
+  top: 0;
+}
+
+.loader-circle-active img {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 65px);
+}
+
+@-webkit-keyframes ball-turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ball-turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}*/
+
+.loader-circle-active,
+.loader-circle-inactive {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #444;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader-circle-inactive:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: black;
+}
+
+.loader-circle-active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(rgb(0, 223, 223), black 60%);
+  animation: spin 0.8s infinite linear;
+}
+.loader-circle-active:after,
+.loader-circle-inactive:after {
+  content: "";
+  position: absolute;
+  width: 94%;
+  height: 94%;
+  top: 2.5%;
+  left: 2.5%;
+  background-color: #222;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #444;
+}
+
+.greyPrint-cont {
+  z-index: 30;
+  position: fixed;
+  left: calc(50vw - 50px);
+  bottom: calc(50vh - 100px);
+  overflow: hidden;
+  height: 200px;
+  -webkit-animation: reduce 4s linear 1;
+  -moz-animation: reduce 4s linear 1;
+  animation: reduce 4s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.loader-circle-active .greyPrint-cont img {
+  z-index: 40;
+  filter: grayscale(1);
+  margin-top: 30px;
+}
+
+.bluePrint-cont {
+  z-index: 50;
+  position: fixed;
+  left: calc(50vw - 50px);
+  top: calc(50vh - 100px);
+  overflow: hidden;
+  height: 0;
+  -webkit-animation: grow 4s linear 1;
+  -moz-animation: grow 4s linear 1;
+  animation: grow 4s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.loader-circle-active .bluePrint-cont img {
+  z-index: 60;
+  margin-top: 30px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  to {
+    height: 200px;
+  }
+}
+
+@keyframes reduce {
+  to {
+    height: 0px;
+  }
+}
+
+.loader-circle-active #laser {
+  position: absolute;
+  height: 200px;
+  -webkit-animation: scan 4s linear 1;
+  -moz-animation: scan 4s linear 1;
+  animation: scan 4s linear 1;
+  animation-fill-mode: forwards;
+  border-top: 2px solid rgb(0, 174, 255);
+  z-index: 40;
+  width: 200px;
+  bottom: 198px;
+  top: 0px;
+}
+
+@keyframes scan {
+  to {
+    top: 200px;
+    bottom: 0;
+  }
 }
