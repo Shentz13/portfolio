@@ -1,12 +1,15 @@
 import './stylesMenu.css';
+import MenuItem from '../MenuItem/MenuItemComponent';
 
-function Menu(props) {
+function Menu() {
+
+
     return (
         <div id="menuContainer">
-            <div id="circle"></div>
-            <div id="menu" className="blue-menu">
-                <h2>SKILLS</h2>
-            </div>
+            <MenuItem contentText="Menu content">
+            </MenuItem>
+            <MenuItem contentText="Menu content 2">
+            </MenuItem>
         </div>
     )
 }

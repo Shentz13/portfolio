@@ -1,0 +1,16 @@
+.cursor {
+  height: 100vh;
+  width: 20vw;
+  position: absolute;
+  background-image: URL("../../assets/img/robotic-arm.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.loader-container,
+.loader-container > * {
+  cursor: none;
+}

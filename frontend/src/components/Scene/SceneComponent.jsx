@@ -1,9 +1,7 @@
 import './stylesScene.css';
-import Container from '../Container/ContainerComponent';
-import Text from '../Text/TextComponent';
-import Menu from '../Menu/MenuComponent';
 import { useRef } from 'react';
 import video from '../../assets/video/Astronomy-3.mp4';
+import HomeComponent from '../Home/HomeComponent';
 
 function Scene() {
     const videoRef = useRef();
@@ -16,10 +14,7 @@ function Scene() {
                 <source src={video} type='video/mp4' />
             </video>
             <div id="frame">
-
-                
-                
-
+                <HomeComponent></HomeComponent>
             </div>
         </div>
     )
